@@ -24,21 +24,21 @@ func (p *Prompt) handleSignals(exitCh chan int, winSizeCh chan *WinSize, stop ch
 	for {
 		select {
 		case <-stop:
-			debug.Log("stop handleSignals")
+			// debug.Log("stop handleSignals")
 			return
 		case s := <-sigCh:
 			switch s {
 			case syscall.SIGINT: // kill -SIGINT XXXX or Ctrl+c
 				debug.Log("Catch SIGINT")
-				exitCh <- 0
+				// exitCh <- 0
 
 			case syscall.SIGTERM: // kill -SIGTERM XXXX
 				debug.Log("Catch SIGTERM")
-				exitCh <- 1
+				// exitCh <- 1
 
 			case syscall.SIGQUIT: // kill -SIGQUIT XXXX
 				debug.Log("Catch SIGQUIT")
-				exitCh <- 0
+				// exitCh <- 0
 
 			case syscall.SIGWINCH:
 				debug.Log("Catch SIGWINCH")
